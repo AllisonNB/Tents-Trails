@@ -1,0 +1,58 @@
+.show {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.campsite {
+    border: 1px solid rgb(196, 192, 192);
+    border-radius: 4px;
+    max-width: 30rem;
+    text-align: center;
+}
+
+.campsite img,
+.reviews img {
+    width: 30rem;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 80%;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.actions a,
+.actions button,
+.reviews button {
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    letter-spacing: 1%;
+}
+
+.actions a {
+    border: 1px solid #219ebc;
+    background-color: #219ebc;
+}
+
+.actions button {
+    border: 1px solid #c1121f;
+    background-color: #c1121f;
+}
+
+.reviews button {
+    border: 1px solid #386641;
+    background-color: #386641;
+}
