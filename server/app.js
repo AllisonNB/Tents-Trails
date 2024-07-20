@@ -37,24 +37,39 @@ app.get('/campgrounds', async (req, res) => {
     res.json(campgrounds);
 })
 
+//new camp
+app.post('/campgrounds', async (req, res) => {
+    console.log(req.body)
+    const campground = new Campground(req.body);
+    await campground.save();
+    res.redirect(`/campgrounds/${campground._id}`)
+})
 
-//one camp
+
+//show one camp
 app.get('/campgrounds/:campid', async (req, res) => {
     const campid = req.params.campid;
     const campsite = await Campground.findById(campid);
     res.json(campsite);
 })
 
+//edit camp 
+app.patch('/campgrounds/:campid/edit', async (req, res) => {
+    const campid = req.params.campid;
+    await Campground.findByIdAndUpdate(campid, { ...req.body });
+    console.log('edited camp!')
+})
 
-
-//new camp
-
-//edit camp
-
-//delete camp
 
 
 
 app.listen(4500, () => {
     console.log('listening on port 4500')
 })
+
+
+
+
+
+
+

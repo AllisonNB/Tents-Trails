@@ -2,9 +2,7 @@ import { useLoaderData, json } from "react-router-dom";
 import CampsList from "../Components/CampsList";
 
 const AllCampgrounds = () => {
-
     const campgrounds = useLoaderData();
-
 
     return <CampsList campgrounds={campgrounds} />
 }

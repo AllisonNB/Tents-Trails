@@ -1,9 +1,9 @@
-import { useLoaderData, json } from 'react-router-dom';
+import { useRouteLoaderData, json } from 'react-router-dom';
 
 import Campsite from "../Components/Campsite"
 
 const CampDetails = () => {
-    const campDetails = useLoaderData();
+    const campDetails = useRouteLoaderData('campDetails');
 
     return (
         <Campsite details={campDetails} />

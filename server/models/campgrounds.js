@@ -8,17 +8,8 @@ const campgroundSchema = new Schema({
     difficulty: String,
     description: String,
     dateVisited: Date,
-    images: [String],
+    image: String,
 });
 
 module.exports = mongoose.model('Campground', campgroundSchema);
 
-
-// example
-// lake: big crow
-// area: central
-// route: opeongo, big crow
-// difficulty: easy
-// dateVisited: June 3, 2020
-// description: easy route, would recommend!
-// image: URL

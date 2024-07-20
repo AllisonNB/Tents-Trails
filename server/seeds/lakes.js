@@ -19,3 +19,11 @@ module.exports.centralLakes = [
     "Mckaskill Lake"
 ]
 
+
+module.exports.areas = [
+    'Central',
+    'East',
+    'West',
+    'North',
+    'South'
+]

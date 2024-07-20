@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { centralLakes } = require('./lakes');
+const { centralLakes, areas } = require('./lakes');
 const ratings = require('./ratings');
 const Campground = require('../models/campgrounds');
 
@@ -14,20 +14,25 @@ mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp')
     })
 
 
+const getRandIndex = (num) => {
+    return Math.floor(Math.random() * num);
+}
 
 const seedDB = async () => {
     await Campground.deleteMany({});
     for (let i = 0; i < 30; i++) {
-        const randCampInd = Math.floor(Math.random() * 15);
-        const randRatingInd = Math.floor(Math.random() * 3);
+        const lakeInd = getRandIndex(15);
+        const ratingInd = getRandIndex(3);
+        const areaInd = getRandIndex(5);
+
         const camp = new Campground({
-            lake: `${centralLakes[randCampInd]}`,
-            area: 'Central Algonquin',
-            route: 'some lake - another lake - another lake',
-            difficulty: `${ratings[randRatingInd]}`,
+            lake: `${centralLakes[lakeInd]}`,
+            area: `${areas[areaInd]}`,
+            route: 'lake1 - lake2 - lake3',
+            difficulty: `${ratings[ratingInd]}`,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a exercitationem maxime aspernatur enim perferendis eum pariatur. Sint, a non totam dolorum sapiente quasi sunt ad mollitia magni laboriosam voluptatibus?',
             dateVisited: new Date(),
-            images: ['camp1.jpg', 'camp2.jpg']
+            image: 'https://res.cloudinary.com/dctayuelh/image/upload/v1698592665/YelpCamp/f8ydvy4pi8uwer8e8xxl.jpg'
         })
         await camp.save();
     }
