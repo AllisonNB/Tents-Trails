@@ -5,6 +5,7 @@ import Homepage from './Routes/Homepage';
 import CampRootLayout from './Routes/CampRootLayout';
 import AllCampgrounds, { loader as campgroundsLoader } from './Routes/AllCampgrounds';
 import CampDetails, { loader as campsiteDetailsLoader } from './Routes/CampDetails';
+import { action as campAction } from '../src/Components/CampForm';
 import NewCamp from './Routes/NewCamp';
 import EditCamp from './Routes/EditCamp';
 import Login from './Routes/Login';
@@ -30,22 +31,25 @@ const router = createBrowserRouter([
             loader: campgroundsLoader,
           },
           {
+            path: 'new',
+            element: <NewCamp />,
+            action: campAction,
+          },
+          {
             path: ':campid',
+            loader: campsiteDetailsLoader,
+            id: 'campDetails',
             children: [
               {
                 index: true,
                 element: <CampDetails />,
-                loader: campsiteDetailsLoader,
               },
               {
                 path: 'edit',
                 element: <EditCamp />,
+                action: campAction,
               },
             ],
-          },
-          {
-            path: 'new',
-            element: <NewCamp />,
           },
         ]
       },

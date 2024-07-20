@@ -1,11 +1,11 @@
-import React from 'react'
+import { useRouteLoaderData } from 'react-router-dom';
+
+import CampForm from '../Components/CampForm';
 
 const EditCamp = () => {
-    return (
-        <div>
-            <h1>edit camp</h1>
-        </div>
-    )
+    const campDetails = useRouteLoaderData('campDetails');
+
+    return <CampForm method="PATCH" camp={campDetails} />
 }
 
 export default EditCamp

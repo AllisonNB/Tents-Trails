@@ -1,11 +1,11 @@
-import React from 'react'
+import { useRouteLoaderData } from 'react-router-dom';
+import CampForm from '../Components/CampForm';
 
 const NewCamp = () => {
-    return (
-        <div>
-            <h1>new camp</h1>
-        </div>
-    )
+    const campDetails = useRouteLoaderData('campDetails');
+
+    return <CampForm method='POST' camp={campDetails} />
 }
 
 export default NewCamp;
+
