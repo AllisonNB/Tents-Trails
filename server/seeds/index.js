@@ -32,11 +32,13 @@ const seedDB = async () => {
             difficulty: `${ratings[ratingInd]}`,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a exercitationem maxime aspernatur enim perferendis eum pariatur. Sint, a non totam dolorum sapiente quasi sunt ad mollitia magni laboriosam voluptatibus?',
             dateVisited: new Date(),
-            image: 'https://res.cloudinary.com/dctayuelh/image/upload/v1698592665/YelpCamp/f8ydvy4pi8uwer8e8xxl.jpg'
+            image:'https://res.cloudinary.com/dctayuelh/image/upload/v1698592665/YelpCamp/f8ydvy4pi8uwer8e8xxl.jpg',
         })
         await camp.save();
     }
 }
+
+
 
 seedDB().then(() => {
     mongoose.connection.close();

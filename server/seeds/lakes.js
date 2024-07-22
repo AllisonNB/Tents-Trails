@@ -12,7 +12,7 @@ module.exports.centralLakes = [
     "Hogan Lake",
     "Lake Lavieille",
     "Lake Opeongo",
-    "Radient Lake",
+    "Radiant Lake",
     "Dickson Lake",
     "Booth Lake",
     "Shirley Lake",

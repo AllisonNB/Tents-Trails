@@ -39,32 +39,36 @@ app.get('/campgrounds', async (req, res) => {
 
 //new camp
 app.post('/campgrounds', async (req, res) => {
-    console.log(req.body)
     const campground = new Campground(req.body);
     await campground.save();
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.status(200).json({ message: 'Created camp!' });
+})
+
+//edit camp 
+app.patch('/campgrounds/:campid/edit', async (req, res) => {
+    const {campid} = req.params;
+    await Campground.findByIdAndUpdate(campid, { ...req.body });
+    res.status(200).json({ message: 'Edited camp!' });
 })
 
 
 //show one camp
 app.get('/campgrounds/:campid', async (req, res) => {
-    const campid = req.params.campid;
+    const {campid} = req.params;
     const campsite = await Campground.findById(campid);
     res.json(campsite);
 })
 
-//edit camp 
-app.patch('/campgrounds/:campid/edit', async (req, res) => {
-    const campid = req.params.campid;
-    await Campground.findByIdAndUpdate(campid, { ...req.body });
-    console.log('edited camp!')
+//delete
+app.delete('/campgrounds/:campid', async (req, res) => {
+    const {campid} = req.params;
+    await Campground.findByIdAndDelete(campid);
+    res.status(200).json({ message: 'Deleted camp!' });
 })
 
 
-
-
 app.listen(4500, () => {
-    console.log('listening on port 4500')
+    console.log('listening on port 4500');
 })
 
 

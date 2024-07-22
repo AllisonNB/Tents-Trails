@@ -1,12 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useSubmit } from 'react-router-dom';
 import classes from './Campsite.module.css';
 
 import map from '../../public/Map.jpg';
 
 const Campsite = ({ details }) => {
+    const submit = useSubmit();
 
     let dateVisited = new Date(details.dateVisited);
     let formattedDate = dateVisited.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
+
+    const deleteCamp = () => {
+        const proceed = window.confirm('Are you sure you want to delete this camp?');
+
+        if (proceed) {
+            submit(null, {method: 'delete'})
+        }
+    }
 
     return (
         <div className={classes.show}>
@@ -20,7 +29,7 @@ const Campsite = ({ details }) => {
                 <p>{details.description}</p>
                 <menu className={classes.actions}>
                     <Link to="edit">Edit</Link>
-                    <button>Delete</button>
+                    <button onClick={deleteCamp}>Delete</button>
                 </menu>
             </article>
             <div className={classes.reviews}>

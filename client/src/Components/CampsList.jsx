@@ -4,7 +4,7 @@ import classes from './CampsList.module.css';
 function CampsList({ campgrounds }) {
 
   return (
-    <div className={classes.events}>
+    <div className={classes.camps}>
       <ul className={classes.list}>
         {campgrounds.map((camp) => (
           <li key={camp._id} className={classes.item}>

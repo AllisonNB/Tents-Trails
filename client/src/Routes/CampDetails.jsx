@@ -1,4 +1,4 @@
-import { useRouteLoaderData, json } from 'react-router-dom';
+import { useRouteLoaderData, json, redirect } from 'react-router-dom';
 
 import Campsite from "../Components/Campsite"
 
@@ -23,4 +23,18 @@ export const loader = async ({ params }) => {
     } else {
         return response;
     }
+}
+
+
+export const action = async ({params}) => {
+    const id = params.campid;
+    const response = await fetch(`http://localhost:4500/campgrounds/${id}` ,{
+        method: 'DELETE', 
+    });
+
+    if (!response.ok) {
+        throw json({ message: `couldn't delete campsite` }, { status: 500 });
+    }
+
+    return redirect('/campgrounds')
 }

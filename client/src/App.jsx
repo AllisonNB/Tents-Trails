@@ -4,7 +4,7 @@ import ErrorPage from './Routes/ErrorPage';
 import Homepage from './Routes/Homepage';
 import CampRootLayout from './Routes/CampRootLayout';
 import AllCampgrounds, { loader as campgroundsLoader } from './Routes/AllCampgrounds';
-import CampDetails, { loader as campsiteDetailsLoader } from './Routes/CampDetails';
+import CampDetails, { loader as campsiteDetailsLoader, action as deleteCampAction } from './Routes/CampDetails';
 import { action as campAction } from '../src/Components/CampForm';
 import NewCamp from './Routes/NewCamp';
 import EditCamp from './Routes/EditCamp';
@@ -43,6 +43,7 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <CampDetails />,
+                action: deleteCampAction,
               },
               {
                 path: 'edit',

@@ -1,11 +1,13 @@
-import { json, redirect } from 'react-router-dom';
-import { Form, useNavigate } from 'react-router-dom';
+import { Form, useNavigate, redirect, json, useNavigation} from 'react-router-dom';
 
 import classes from './CampForm.module.css';
 
 
 function CampForm({ method, camp }) {
     const navigate = useNavigate();
+    const navigation = useNavigation();
+
+    const isSubmitting = navigation.state === 'submitting';
 
     const cancelEdit = () => {
         navigate('..');
@@ -55,10 +57,10 @@ function CampForm({ method, camp }) {
                 <textarea id="description" name="description" rows="5" defaultValue={camp && camp.description} required />
             </p>
             <div className={classes.actions}>
-                <button type="button" onClick={cancelEdit}>
+                <button type="button" onClick={cancelEdit} disabled={isSubmitting}>
                     Cancel
                 </button>
-                <button>Save</button>
+                <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...': 'Save'}</button>
             </div>
         </Form>
     );
@@ -91,15 +93,19 @@ export const action = async ({ request, params }) => {
     });
 
 
+    //reponse for validation errors, 422 is status you set on the backend
     if (response.status === 422) {
         return response;
     }
 
-    if (!response.ok) {
+    if (response.ok) {
+        // const data = await response.json();
+        // window.alert(data.message);
+        return redirect('/campgrounds');
+    } else {
         throw json({ message: 'Could not save event.' }, { status: 500 });
     }
 
-    return redirect('/campgrounds');
 }
 
 

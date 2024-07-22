@@ -1,8 +1,19 @@
-import { useLoaderData, json } from "react-router-dom";
+import { useLoaderData, json, useLocation } from "react-router-dom";
+import {useEffect} from 'react';
 import CampsList from "../Components/CampsList";
 
 const AllCampgrounds = () => {
     const campgrounds = useLoaderData();
+
+
+    //USER FEEDBACK --> NEED TO FIX
+    // const location = useLocation(); 
+    // useEffect(() => {
+    //     if (location.state && location.state.message) {
+    //         window.alert(location.state.message);
+    //     }
+    // }, [location]);
+
 
     return <CampsList campgrounds={campgrounds} />
 }
