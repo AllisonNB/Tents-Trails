@@ -12,7 +12,6 @@ export default function CampNav() {
                             className={({ isActive }) =>
                                 isActive ? classes.active : undefined
                             }
-                            end
                         >
                             All Campgrounds
                         </NavLink>

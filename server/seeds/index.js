@@ -20,7 +20,7 @@ const getRandIndex = (num) => {
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 15; i++) {
         const lakeInd = getRandIndex(15);
         const ratingInd = getRandIndex(3);
         const areaInd = getRandIndex(5);

@@ -1,6 +1,9 @@
 .form {
-    max-width: 40rem;
-    margin: 2rem auto;
+    max-width: 50rem;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem 5rem;
 }
 
 .form label,
@@ -8,6 +11,7 @@
 .form textarea {
     display: block;
     width: 100%;
+    margin-top: .2rem;
 }
 
 .form input,
@@ -27,20 +31,19 @@
     cursor: pointer;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
-    background-color: var(--color-gray-300);
-    color: var(--color-gray-800);
+    background-color: #283618;
+    margin-top: 1rem;
+    color: white;
     border: none;
 }
 
 .actions button[type='button'] {
-    background-color: transparent;
-    color: var(--color-gray-300);
+    background-color: #780000;
+    color: white;
 }
 
-.actions button:hover {
-    background-color: var(--color-primary-300);
-}
-
+.actions button:hover,
 .actions button[type='button']:hover {
-    background-color: var(--color-gray-800);
+    transform: scale(1.1);
 }
+

@@ -1,7 +1,8 @@
 .header {
-    max-width: 60rem;
+    background-color: #606c38;
+    color: white;
     margin: auto;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,15 +11,18 @@
 .list {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .list a {
     text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    display: inline-block;
 }
 
 .list a:hover,
 .list a.active {
-    text-decoration: underline;
-    color: red;
+    color: #fcbf49;
+    transform: scale(1.2);
 }

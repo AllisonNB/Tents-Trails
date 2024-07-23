@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import CampNav from '../Components/CampNav';
 
-function CampRootLayout() {
+function CampListLayout() {
     return (
         <>
             <CampNav />
@@ -11,4 +11,4 @@ function CampRootLayout() {
     );
 }
 
-export default CampRootLayout;
+export default CampListLayout;

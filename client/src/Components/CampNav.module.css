@@ -1,24 +1,27 @@
 .header {
+    margin: 0 auto;
+    max-width: 50rem;
     padding: 2rem;
-    display: flex;
-    justify-content: center;
 }
 
 .list {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
 .list a {
-    background-color: var(--color-gray-500);
-    color: var(--color-gray-900);
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
     text-decoration: none;
+    border: #283618;
+    background-color: #283618;
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    color: white;
 }
 
 .list a:hover,
-.list a:active,
-.list a.active {
-    background-color: var(--color-primary-600);
+.list a:active {
+    background-color: #fcbf49;
+    border: #fcbf49;
+    color: #283618;
 }

@@ -2,16 +2,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './Routes/RootLayout';
 import ErrorPage from './Routes/ErrorPage';
 import Homepage from './Routes/Homepage';
-import CampRootLayout from './Routes/CampRootLayout';
+import CampListLayout from './Routes/CampListLayout';
 import AllCampgrounds, { loader as campgroundsLoader } from './Routes/AllCampgrounds';
 import CampDetails, { loader as campsiteDetailsLoader, action as deleteCampAction } from './Routes/CampDetails';
 import { action as campAction } from '../src/Components/CampForm';
 import NewCamp from './Routes/NewCamp';
 import EditCamp from './Routes/EditCamp';
 import Login from './Routes/Login';
-
-
-
 
 
 const router = createBrowserRouter([
@@ -23,7 +20,7 @@ const router = createBrowserRouter([
       { index: true, element: <Homepage /> },
       {
         path: 'campgrounds',
-        element: <CampRootLayout />,
+        element: <CampListLayout />,
         children: [
           {
             index: true,
@@ -65,7 +62,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router} />
+      <RouterProvider router={router}/>
   )
 }
 

@@ -12,7 +12,7 @@ function NavBar() {
                         <NavLink
                             to="/"
                             className={({ isActive }) => isActive ? classes.active : undefined}
-                            end //only active is path ends with just a slash
+                            end //only active if path ends with just a slash
                         >
                             Home
                         </NavLink>
