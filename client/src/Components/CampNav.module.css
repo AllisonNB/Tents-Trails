@@ -25,3 +25,15 @@
     border: #fcbf49;
     color: #283618;
 }
+
+
+@media screen and (max-width: 425px) {
+    
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .list a {
+        font-size: .8rem;
+    }
+}

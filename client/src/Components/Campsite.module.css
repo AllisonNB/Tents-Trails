@@ -1,5 +1,5 @@
 .show {
-    margin: 0 auto;
+    margin: 1rem auto;
     max-width: 50rem;
     background-color: white;
     height: 80vh;
@@ -21,7 +21,7 @@
 
 .campsite img,
 .reviews img {
-    width: 25rem;
+    max-width: 25rem;
     border-radius: 4px;
 }
 
@@ -63,4 +63,45 @@ textarea {
 .reviews button {
     border: 1px solid #386641;
     background-color: #386641;
+}
+
+
+@media screen and (max-width: 425px) {
+    .show {
+        max-width: 20rem;
+        margin: 1rem;
+    }
+    .campsite p, 
+    .reviews p {
+        font-size: .8rem;
+    }
+    
+    img {
+        max-width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 769px) {
+    .show {
+        max-width: 45rem;
+        flex-direction: column;
+        margin: 10rem 2rem 5rem 2rem;
+    }
+
+    .campsite,
+    .reviews {
+        max-width: 19rem;
+        font-size: .8rem;
+    }
+    
+    .campsite p, 
+    .reviews p {
+        font-size: .8rem;
+    }
+    
+    .campsite img,
+    .reviews img {
+        max-width: 19rem;
+    }
 }

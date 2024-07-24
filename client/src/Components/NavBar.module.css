@@ -26,3 +26,23 @@
     color: #fcbf49;
     transform: scale(1.2);
 }
+
+
+
+@media screen and (max-width: 425px) {
+
+    .header {
+       justify-content: space-between;
+       padding: .5rem;
+    }
+
+    h1, 
+    .list a {
+        font-size: .8rem;
+    }
+
+    .list {
+        justify-content: flex-end;
+    }
+
+}

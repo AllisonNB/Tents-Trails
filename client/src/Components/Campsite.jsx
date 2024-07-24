@@ -35,7 +35,7 @@ const Campsite = ({ details }) => {
             <div className={classes.reviews}>
                 <img src={map} alt='map' />
                 <h1>Leave a review</h1>
-                <h2>stars.........</h2>
+                <h2>stars...</h2>
                 <p>Type your review below</p>
                 <textarea name="reviewText" id=""></textarea>
                 <form action="">

@@ -13,7 +13,7 @@ export default function CampNav() {
                                 isActive ? classes.active : undefined
                             }
                         >
-                            All Campgrounds
+                            All Camps
                         </NavLink>
                     </li>
                     <li>
@@ -23,7 +23,7 @@ export default function CampNav() {
                                 isActive ? classes.active : undefined
                             }
                         >
-                            New Campground
+                            New Camp
                         </NavLink>
                     </li>
                 </ul>

@@ -17,7 +17,6 @@ function CampsList({ campgrounds }) {
                 <p>{camp.description}</p>
               </div>
             </Link>
-
           </li>
         ))}
       </ul>
