@@ -1,0 +1,44 @@
+.form {
+    max-width: 55rem;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+.form label,
+.form input,
+.form textarea, 
+.form select {
+    display: block;
+    width: 100%;
+    margin-top: .2rem;
+    padding: 0.25rem;
+    font-size: .9rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.actions button {
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    background-color: #283618;
+    margin-top: .75rem;
+    color: white;
+    border: none;
+}
+
+.actions button[type='button'] {
+    background-color: #780000;
+    color: white;
+}
+
+.actions button:hover,
+.actions button[type='button']:hover {
+    transform: scale(1.1);
+}
+

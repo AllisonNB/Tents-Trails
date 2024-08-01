@@ -1,0 +1,39 @@
+.header {
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 1rem;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.list a {
+    text-decoration: none;
+    border: #283618;
+    background-color: #283618;
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    color: white;
+}
+
+.list a:hover,
+.list a:active {
+    background-color: #fcbf49;
+    border: #fcbf49;
+    color: #283618;
+}
+
+
+@media screen and (max-width: 425px) {
+    
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .list a {
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,48 @@
+.header {
+    background-color: #606c38;
+    color: white;
+    margin: auto;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.list a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.list a:hover,
+.list a.active {
+    color: #fcbf49;
+    transform: scale(1.2);
+}
+
+
+
+@media screen and (max-width: 425px) {
+
+    .header {
+       justify-content: space-between;
+       padding: .5rem;
+    }
+
+    h1, 
+    .list a {
+        font-size: .8rem;
+    }
+
+    .list {
+        justify-content: flex-end;
+    }
+
+}
