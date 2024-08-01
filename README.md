@@ -4,7 +4,7 @@ to run the project:
 - run npm install in both the server and client folders 
 
 
-Next Steps 
+# Next Steps:
 ✔ Add user submission feedback 
 - image upload
 - authentication & authorization 
