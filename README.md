@@ -1,12 +1,15 @@
-# Work in Progress!
+# Work in Progress! 🚧
 
-to run the project: 
-- run npm install in both the server and client folders 
+# Tents & Trails
+A campground review site that allows my friends to share/recommend different backcountry routes in Algonquin Park. 
+
+# How to Use
+1. Use "npm i" in the client and server folders to install all dependencies needed
 
 
-# Next Steps:
-✔ Add user submission feedback 
-- image upload
+# Future Developments
+✔ user submission feedback 
+- user image upload
 - authentication & authorization 
 - add reviews feature
 - unit testing 
