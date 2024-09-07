@@ -14,7 +14,7 @@ function CampForm({ method, camp }) {
 
 
     return (
-        <Form method={method} className={classes.form}>
+        <Form method={method} className={classes.form} encType='multipart/form-data'>
             <p>
                 <label htmlFor="lake">Lake</label>
                 <input id="lake" type="text" name="lake" defaultValue={camp && camp.lake} required />
@@ -47,7 +47,7 @@ function CampForm({ method, camp }) {
             </p>
             <p>
                 <label htmlFor="image">Image</label>
-                <input id="image" type="url" name="image" defaultValue={camp && camp.image} required />
+                <input id="image" type="file" name="image" required mutliple />
             </p>
             <p>
                 <label htmlFor="dateVisited">Date Visited</label>
