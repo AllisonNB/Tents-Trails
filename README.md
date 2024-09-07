@@ -1,4 +1,4 @@
-# Work in Progress! 🚧
+## Work in Progress! 🚧
 
 # Tents & Trails
 A campground review site that allows my friends to share/recommend different backcountry routes in Algonquin Park. 
