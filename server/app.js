@@ -16,10 +16,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp')
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })) //parse form data
 
 
-//***************************************MAKE SURE TO UPDATE THE ALLOW ORIGIN WHEN LAUNCHING FOR PRODUCTION
+//MAKE SURE TO UPDATE THE ALLOW ORIGIN WHEN LAUNCHING FOR PRODUCTION***************************************
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');

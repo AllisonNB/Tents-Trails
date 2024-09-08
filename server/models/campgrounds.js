@@ -8,7 +8,7 @@ const campgroundSchema = new Schema({
     difficulty: String,
     description: String,
     dateVisited: Date,
-    image: Buffer,
+    image: String,
 });
 
 module.exports = mongoose.model('Campground', campgroundSchema);
