@@ -1,12 +1,18 @@
-# Work in Progress!
+## Work in Progress! 🚧
 
-to run the project: 
-- run npm install in both the server and client folders 
+# Tents & Trails
+A campground review site usuing the MERN stack. Users (AKA my friends) can share/recommend different backcountry routes in Algonquin Park. 
+
+# How to Use
+1. Use "npm i" in the client and server folders to install all dependencies needed
+2. Use "npm run dev" to run the client side 
+3. Use "node app.js" to run the server side
 
 
-# Next Steps:
-✔ Add user submission feedback 
-- image upload
+# Future Developments
+✔ user submission feedback 
+- Login route
+- user image upload
 - authentication & authorization 
 - add reviews feature
 - unit testing 
