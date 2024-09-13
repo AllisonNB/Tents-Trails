@@ -19,11 +19,11 @@ mongoose.connect(DBURL)
         console.log(e)
     });
 
-    
+     
 app.use(bodyParser.json());
 
 
-const allowedOrigins = ['https://tentsandtrails.netlify.app', 'http://localhost:5173'];
+const allowedOrigins = ['https://tentsntrails.onrender.com', 'http://localhost:5173'];
 
 app.use(cors({
     origin: allowedOrigins,
