@@ -12,10 +12,11 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 
 # Future Developments
 ✔ user submission feedback  
+✔ migrate data to mongoDB atlas
+- add reviews feature
 - image upload
 - Login route & authentication 
 - authorization - users can only modify posts they authored/submitted 
-- add reviews feature
 - unit testing 
 - automatic sign out
 - search/filter feature
