@@ -23,7 +23,7 @@ mongoose.connect(DBURL)
 app.use(bodyParser.json());
 
 
-const allowedOrigins = ['https://TentsNTrails.netlify.app', 'http://localhost:5173'];
+const allowedOrigins = ['https://tentsandtrails.netlify.app', 'http://localhost:5173'];
 
 app.use(cors({
     origin: allowedOrigins,
