@@ -22,7 +22,7 @@ export default AllCampgrounds;
 
 
 export const loader = async () => {
-    const response = await fetch('http://localhost:4500/campgrounds');
+    const response = await fetch('https://tentsntrails.onrender.com/campgrounds');
 
     if (!response.ok) {
         //json creates response object with data in json format. don't need to parse later
