@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -5,16 +6,19 @@ const mongoose = require('mongoose');
 const Campground = require('./models/campgrounds');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp')
+//Database connection
+const DBURL = process.env.DBURL;
+
+mongoose.connect(DBURL)
     .then(
         console.log('connection with database successful')
     )
     .catch(e => {
         console.log('error in connecting with database');
         console.log(e)
-    })
+    });
 
-
+    
 app.use(bodyParser.json());
 
 
