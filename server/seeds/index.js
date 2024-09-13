@@ -1,10 +1,12 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const { centralLakes, areas } = require('./lakes');
 const ratings = require('./ratings');
 const Campground = require('../models/campgrounds');
 
+const DBURL = process.env.DBURL;
 
-mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp')
+mongoose.connect(DBURL)
     .then(
         console.log('connection with database successful')
     )

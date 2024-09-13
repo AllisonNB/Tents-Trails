@@ -1,31 +1,35 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const Campground = require('./models/campgrounds');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp')
+//Database connection
+const DBURL = process.env.DBURL;
+
+mongoose.connect(DBURL)
     .then(
         console.log('connection with database successful')
     )
     .catch(e => {
         console.log('error in connecting with database');
         console.log(e)
-    })
+    });
 
-
+    
 app.use(bodyParser.json());
 
 
-//MAKE SURE TO UPDATE THE ALLOW ORIGIN WHEN LAUNCHING FOR PRODUCTION***************************************
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+const allowedOrigins = ['https://TentsNTrails.netlify.app', 'http://localhost:5173'];
 
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
 
 //serves all files in public directory 
 app.use(express.static('public'));
@@ -59,12 +63,18 @@ app.get('/campgrounds/:campid', async (req, res) => {
     res.json(campsite);
 })
 
-//delete
+//delete camp
 app.delete('/campgrounds/:campid', async (req, res) => {
     const {campid} = req.params;
     await Campground.findByIdAndDelete(campid);
     res.status(200).json({ message: 'Deleted camp!' });
 })
+
+//create review
+app.post('/campgrounds/:campid/reviews', async (req, res) => {
+
+})
+
 
 
 app.listen(4500, () => {
