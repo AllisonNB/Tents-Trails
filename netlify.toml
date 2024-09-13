@@ -1,4 +1,6 @@
 [build]
+  base = "client"
+  publish = "dist"
   functions = "server/functions"
 
 [[redirects]]
