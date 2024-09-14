@@ -12,9 +12,6 @@ import Login from './Routes/Login';
 import Success from './Routes/Success'
 
 
-const serverURL = import.meta.VITE_serverURL;
-
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -69,9 +66,6 @@ const router = createBrowserRouter([
 
 
 function App() {
-
-  console.log(serverURL)
-
   return (
       <RouterProvider router={router}/>
   )

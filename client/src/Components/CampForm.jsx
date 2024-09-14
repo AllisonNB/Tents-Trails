@@ -1,6 +1,8 @@
 import { Form, useNavigate, redirect, json, useNavigation} from 'react-router-dom';
 import classes from './CampForm.module.css';
 
+const serverURL = import.meta.env.VITE_serverURL;
+
 
 function CampForm({ method, camp }) {
     const navigate = useNavigate();
@@ -77,10 +79,10 @@ export const action = async ({ request, params }) => {
 
     const method = request.method;
     const campid = params.campid;
-    let url = 'http://localhost:4500/campgrounds'
+    let url = `${serverURL}/campgrounds`;
 
     if (method === 'PATCH') {
-        url = `http://localhost:4500/campgrounds/${campid}/edit`
+        url = `${serverURL}/campgrounds/${campid}/edit`;
     }
 
     const response = await fetch(url, {
