@@ -19,10 +19,6 @@ mongoose.connect(DBURL)
         console.log(e)
     });
 
-     
-app.use(bodyParser.json());
-
-
 const PORT = process.env.PORT || 4500
 
 const allowedOrigins = ['https://tentsandtrails.netlify.app', 'http://localhost:5173'];
@@ -33,50 +29,77 @@ app.use(cors({
     allowedHeaders: ['Content-Type']
 }));
 
+
 //serves all files in public directory 
 app.use(express.static('public'));
 
+app.use(bodyParser.json());
 
 //all camps
 app.get('/campgrounds', async (req, res) => {
-    const campgrounds = await Campground.find({});
-    res.json(campgrounds);
-})
+    try {
+        const campgrounds = await Campground.find({});
+        res.json(campgrounds);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error in retrieving campgrounds' });
+    }
+});
+
 
 //new camp
 app.post('/campgrounds', async (req, res) => {
-    const campground = new Campground(req.body);
-    await campground.save();
-    res.status(200).json({ message: 'Created camp!' });
-})
+    try {
+        const campground = new Campground(req.body);
+        await campground.save();
+        res.status(200).json({ message: 'Created camp!' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error with creating new camp' });
+    }
+});
+
 
 //edit camp 
 app.patch('/campgrounds/:campid/edit', async (req, res) => {
-    const {campid} = req.params;
-    await Campground.findByIdAndUpdate(campid, { ...req.body });
-    res.status(200).json({ message: 'Edited camp!' });
-})
+    try {
+        const {campid} = req.params;
+        await Campground.findByIdAndUpdate(campid, { ...req.body });
+        res.status(200).json({ message: 'Edited camp!' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error with editing camp' });
+    }
+});
 
 
 //show one camp
 app.get('/campgrounds/:campid', async (req, res) => {
-    const {campid} = req.params;
-    const campsite = await Campground.findById(campid);
-    res.json(campsite);
-})
+    try {
+        const {campid} = req.params;
+        const campsite = await Campground.findById(campid);
+        res.json(campsite);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error with showing camp details' });
+    }
+});
 
 //delete camp
 app.delete('/campgrounds/:campid', async (req, res) => {
-    const {campid} = req.params;
-    await Campground.findByIdAndDelete(campid);
-    res.status(200).json({ message: 'Deleted camp!' });
-})
+    try {
+        const {campid} = req.params;
+        await Campground.findByIdAndDelete(campid);
+        res.status(200).json({ message: 'Deleted camp!' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error with deleting camp' });
+    }
+});
 
 //create review
 app.post('/campgrounds/:campid/reviews', async (req, res) => {
-
+    try {
+        res.status(200).json({ message: 'created review' });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error with creating review' });
+    }   
 })
-
 
 
 
