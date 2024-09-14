@@ -23,6 +23,8 @@ mongoose.connect(DBURL)
 app.use(bodyParser.json());
 
 
+const PORT = process.env.PORT || 4500
+
 const allowedOrigins = ['https://tentsandtrails.netlify.app', 'http://localhost:5173'];
 
 app.use(cors({
@@ -77,9 +79,10 @@ app.post('/campgrounds/:campid/reviews', async (req, res) => {
 
 
 
-// app.listen(4500, () => {
-//     console.log('listening on port 4500');
-// })
+
+app.listen(PORT, () => {
+    console.log(`server listening on port ${PORT}`);
+})
 
 
 
