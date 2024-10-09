@@ -1,5 +1,6 @@
 import { Link, useSubmit, Form } from 'react-router-dom';
 import classes from './Campsite.module.css';
+import ReviewForm from './ReviewForm';
 
 import map from '/Map.jpg';
 
@@ -36,17 +37,7 @@ const Campsite = ({ details }) => {
             <div className={classes.reviews}>
                 <img src={map} alt='map' />
                 <h1>Leave a review</h1>
-                <Form method='POST'>
-                    <div>
-                        <label htmlFor="reviewRating">Rating</label>
-                        <input type="range" id="reviewRating" min="1" max="5"/>
-                    </div>
-                    <div>
-                        <label htmlFor="reviewText">Type your review below</label>
-                        <textarea name="reviewText" id="reviewText"></textarea>
-                    </div>
-                    <button>Submit</button>
-                </Form>
+                <ReviewForm campid={details._id} />
                 <p>example review! ....</p>
             </div>
         </div>

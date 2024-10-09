@@ -93,7 +93,7 @@ export const action = async ({ request, params }) => {
         body: JSON.stringify(campData),
     });
 
-    //reponse for validation errors, 422 is status you set on the backend
+    //reponse for validation errors, 422 is status set on backend
     if (response.status === 422) {
         return response;
     }
@@ -104,7 +104,7 @@ export const action = async ({ request, params }) => {
         return redirect(`/campgrounds/success`)
     }
     else {
-        throw json({ message: 'Could not save event.' }, { status: 500 });
+        throw json({ message: 'Could not save camp details.' }, { status: 500 });
     }
 }
 

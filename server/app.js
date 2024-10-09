@@ -5,10 +5,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Campground = require('./models/campgrounds');
+const Review = require('./models/reviews');
 
 
-//Database connection
+//environ variables
 const DBURL = process.env.DBURL;
+const PORT = process.env.PORT || 4500;
 
 mongoose.connect(DBURL)
     .then(
@@ -19,7 +21,7 @@ mongoose.connect(DBURL)
         console.log(e)
     });
 
-const PORT = process.env.PORT || 4500
+
 
 const allowedOrigins = ['https://tentsandtrails.netlify.app', 'http://localhost:5173'];
 
@@ -81,6 +83,7 @@ app.get('/campgrounds/:campid', async (req, res) => {
     }
 });
 
+
 //delete camp
 app.delete('/campgrounds/:campid', async (req, res) => {
     try {
@@ -92,13 +95,29 @@ app.delete('/campgrounds/:campid', async (req, res) => {
     }
 });
 
+
 //create review
 app.post('/campgrounds/:campid/reviews', async (req, res) => {
     try {
-        res.status(200).json({ message: 'created review' });
+        const { campid } = req.params;
+        const { reviewRating, reviewText } = req.body;
+    
+        const review = new Review({ rating: reviewRating, text: reviewText });
+        await review.save();
+
+        console.log('review saved:', review)
+
+        const campground = await Campground.findById(campid);
+        campground.reviews.push(review);
+        await campground.save();
+
+        console.log('campground updated:', campground)
+
+        res.status(200).json({message: 'review submitted successfully!'});
     } catch (error) {
-        res.status(500).json({ message: 'Server error with creating review' });
-    }   
+        console.error('error:', error)
+        res.status(500).json({ message: 'Server error with adding review' });
+    }
 })
 
 
@@ -106,6 +125,8 @@ app.post('/campgrounds/:campid/reviews', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);
 })
+
+
 
 
 
