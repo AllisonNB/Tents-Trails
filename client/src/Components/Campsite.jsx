@@ -38,7 +38,12 @@ const Campsite = ({ details }) => {
                 <img src={map} alt='map' />
                 <h1>Leave a review</h1>
                 <ReviewForm campid={details._id} />
-                <p>example review! ....</p>
+                {details.reviews.map(review => (
+                    <div key={review._id} className={classes.reviewPost}> 
+                        <h3>{review.rating}/5</h3>
+                        <p>{review.text}</p>
+                    </div>
+                ))}
             </div>
         </div>
     )

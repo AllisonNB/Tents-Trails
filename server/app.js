@@ -35,7 +35,10 @@ app.use(cors({
 //serves all files in public directory 
 app.use(express.static('public'));
 
+
+//parsing form data
 app.use(bodyParser.json());
+
 
 //all camps
 app.get('/campgrounds', async (req, res) => {
@@ -76,7 +79,7 @@ app.patch('/campgrounds/:campid/edit', async (req, res) => {
 app.get('/campgrounds/:campid', async (req, res) => {
     try {
         const {campid} = req.params;
-        const campsite = await Campground.findById(campid);
+        const campsite = await Campground.findById(campid).populate('reviews');
         res.json(campsite);
     } catch (error) {
         res.status(500).json({ message: 'Server error with showing camp details' });
@@ -99,6 +102,7 @@ app.delete('/campgrounds/:campid', async (req, res) => {
 //create review
 app.post('/campgrounds/:campid/reviews', async (req, res) => {
     try {
+
         const { campid } = req.params;
         const { reviewRating, reviewText } = req.body;
     
@@ -108,7 +112,7 @@ app.post('/campgrounds/:campid/reviews', async (req, res) => {
         console.log('review saved:', review)
 
         const campground = await Campground.findById(campid);
-        campground.reviews.push(review);
+        campground.reviews.push(review._id);
         await campground.save();
 
         console.log('campground updated:', campground)
@@ -120,7 +124,7 @@ app.post('/campgrounds/:campid/reviews', async (req, res) => {
     }
 })
 
-
+    
 
 app.listen(PORT, () => {
     console.log(`server listening on port ${PORT}`);
