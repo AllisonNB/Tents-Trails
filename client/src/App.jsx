@@ -10,6 +10,7 @@ import NewCamp from './Routes/NewCamp';
 import EditCamp from './Routes/EditCamp';
 import Login from './Routes/Login';
 import Success from './Routes/Success'
+import ReviewForm, {action as reviewsAction} from './Components/ReviewForm';
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
                 element: <EditCamp />,
                 action: campAction,
               },
+              {
+                path: 'reviews',
+                element: <ReviewForm />,
+                action: reviewsAction,
+              }
             ],
           },
         ]

@@ -64,7 +64,14 @@ textarea {
 .reviews button {
     border: 1px solid #386641;
     background-color: #386641;
+    margin-bottom: 5%;
 }
+
+.reviewPost {
+    text-align: left;
+}
+
+
 
 
 @media screen and (max-width: 425px) {
