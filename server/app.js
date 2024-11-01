@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 
 
 //all camps
-app.get('/campgrounds', async (req, res) => {
+app.get('campgrounds', async (req, res) => {
     try {
         const campgrounds = await Campground.find({});
         res.json(campgrounds);
@@ -52,7 +52,7 @@ app.get('/campgrounds', async (req, res) => {
 
 
 //new camp
-app.post('/campgrounds', async (req, res) => {
+app.post('/campgrounds/new', async (req, res) => {
     try {
         const campground = new Campground(req.body);
         await campground.save();
