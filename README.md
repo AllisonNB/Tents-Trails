@@ -31,5 +31,6 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 ✔ setup action & extract review form data
 ✔ submit extracted data to backend
 ✔ display data on camp details page
-edit route for reviews
-delete route for reviews
+
+- edit route for reviews
+- delete route for reviews
