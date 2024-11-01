@@ -19,7 +19,7 @@ function NavBar() {
                     </li>
                     <li>
                         <NavLink
-                            to="/campgrounds"
+                            to="campgrounds"
                             className={({ isActive }) => isActive ? classes.active : undefined}
                         >
                             Campgrounds
