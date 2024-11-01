@@ -85,9 +85,6 @@ export const action = async ({ request, params }) => {
         url = `${serverURL}/campgrounds/${campid}/edit`;
     }
 
-    if (method === 'POST') {
-        url = `${serverURL}/campgrounds/new`
-    }
 
     const response = await fetch(url, {
         method: method,

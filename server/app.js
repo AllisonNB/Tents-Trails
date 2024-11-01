@@ -52,7 +52,7 @@ app.get('campgrounds', async (req, res) => {
 
 
 //new camp
-app.post('/campgrounds/new', async (req, res) => {
+app.post('/campgrounds', async (req, res) => {
     try {
         const campground = new Campground(req.body);
         await campground.save();
