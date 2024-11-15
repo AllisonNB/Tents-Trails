@@ -17,17 +17,10 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 ✔ user submission feedback  
 ✔ migrate data to mongoDB atlas
 
-- add reviews feature
+- pop up notice for server delay
+- add reviews feature - finish delete route
 - image upload
 - Login route & authentication
 - authorization - authors can only edit/delete
 - unit testing
 - search/filter feature
-
-# Next Steps
-
-✔ steup review form component
-✔ setup action & extract review form data
-✔ submit extracted data to backend
-✔ display data on camp details page
-delete route for reviews
