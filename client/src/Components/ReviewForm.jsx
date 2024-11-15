@@ -1,6 +1,5 @@
 import {Form, redirect, json } from 'react-router-dom';
 
-
 const serverURL = import.meta.env.VITE_serverURL;
 
 function ReviewForm({campid}) {
@@ -9,7 +8,7 @@ function ReviewForm({campid}) {
         <Form method='POST' action={`/campgrounds/${campid}/reviews`}>
             <div>
                 <label htmlFor="reviewRating">Rating</label>
-                <input name="reviewRating" type="range" id="reviewRating" min="1" max="5"/>
+                <input name="reviewRating" type="range" id="reviewRating" min="1" max="5" value="1"/>
             </div>
             <div>
                 <label htmlFor="reviewText">Type your review below</label>
