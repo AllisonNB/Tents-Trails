@@ -20,9 +20,8 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 - add reviews feature
 - image upload
 - Login route & authentication
-- authorization - users can only modify posts they authored/submitted
+- authorization - authors can only edit/delete
 - unit testing
-- automatic sign out
 - search/filter feature
 
 # Next Steps
@@ -31,5 +30,4 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 ✔ setup action & extract review form data
 ✔ submit extracted data to backend
 ✔ display data on camp details page
-edit route for reviews
 delete route for reviews
