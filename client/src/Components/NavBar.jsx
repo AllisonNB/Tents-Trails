@@ -1,8 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import classes from './NavBar.module.css';
 
 
 function NavBar() {
+
     return (
         <header className={classes.header}>
             <h1>Tents&Trails</h1>
@@ -23,14 +24,6 @@ function NavBar() {
                             className={({ isActive }) => isActive ? classes.active : undefined}
                         >
                             Campgrounds
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/login"
-                            className={({ isActive }) => isActive ? classes.active : undefined}
-                        >
-                            Login
                         </NavLink>
                     </li>
                 </ul>

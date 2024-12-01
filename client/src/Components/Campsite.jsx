@@ -13,10 +13,6 @@ const Campsite = ({ details }) => {
 
     const deleteCamp = () => {
         const proceed = window.confirm('Are you sure you want to delete this camp?');
-
-        if (proceed) {
-            submit(null, {method: 'delete'})
-        }
     }
 
     return (
