@@ -102,20 +102,15 @@ app.delete('/campgrounds/:campid', async (req, res) => {
 //create review
 app.post('/campgrounds/:campid/reviews', async (req, res) => {
     try {
-
         const { campid } = req.params;
         const { reviewRating, reviewText } = req.body;
     
         const review = new Review({ rating: reviewRating, text: reviewText });
         await review.save();
 
-        console.log('review saved:', review)
-
         const campground = await Campground.findById(campid);
         campground.reviews.push(review._id);
         await campground.save();
-
-        console.log('campground updated:', campground)
 
         res.status(200).json({message: 'review submitted successfully!'});
     } catch (error) {
@@ -123,6 +118,30 @@ app.post('/campgrounds/:campid/reviews', async (req, res) => {
         res.status(500).json({ message: 'Server error with adding review' });
     }
 })
+
+//edit review 
+app.patch('/campgrounds/:campid/reviews', async(req, res) => {
+    try {
+        const { campid } = req.params;
+        const { reviewRating, reviewText } = req.body;
+    
+        const review = new Review({ rating: reviewRating, text: reviewText });
+        await review.save();
+
+        const campground = await Campground.findById(campid);
+        campground.reviews.push(review._id);
+        await campground.save();
+
+        res.status(200).json({message: 'review edited successfully!'});
+    } catch (error) {
+        console.error('error:', error)
+        res.status(500).json({ message: 'Server error with editing review' });
+    }
+})
+
+
+//delete review
+
 
     
 
