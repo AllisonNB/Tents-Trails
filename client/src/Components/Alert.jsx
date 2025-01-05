@@ -1,14 +1,16 @@
-import classes from './Alert.module.css';
+import classes from "./Alert.module.css";
 
-const Alert = ({hideAlert}) => {
+const Alert = ({ hideAlert }) => {
+  return (
+    <div className={classes.box}>
+      <h1 className={classes.alertText}>Important</h1>
+      <p className={classes.alertText}>
+        This website&#39s server is hosted on Render and may take 1 minute to
+        load after a period of inactivity
+      </p>
+      <button onClick={hideAlert}>Okay</button>
+    </div>
+  );
+};
 
-        return (
-            <div className={classes.box}>
-                <h1>Important</h1>
-                <p>This website's server is hosted on Render and may take 1 minute to load after a period of inactivity</p>
-                <button onClick={hideAlert}>Okay</button>
-            </div>
-        )
-    }
-    
 export default Alert;

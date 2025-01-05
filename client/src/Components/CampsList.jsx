@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
-import classes from './CampsList.module.css';
+import { Link } from "react-router-dom";
+import classes from "./CampsList.module.css";
 
 function CampsList({ campgrounds }) {
-
   return (
     <div className={classes.camps}>
       <ul className={classes.list}>
