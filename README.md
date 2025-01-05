@@ -16,7 +16,3 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 - authorization - authors can only edit/delete
 - unit testing
 - search/filter feature
-
-# Improvements
-
-- actions & loaders possibly in their own file to more easily find in the future

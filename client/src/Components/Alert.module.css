@@ -8,14 +8,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid #ccc;
-  padding: 5%;
+  padding: 1rem;
   background-color: white;
   z-index: 1000;
   border-radius: 10px;
 }
 
 .alertText {
-  padding: 1% 0 1% 0;
   text-align: center;
 }
 
