@@ -10,7 +10,7 @@ const Review = require("./models/reviews");
 const job = require("./cron");
 
 const DBURL = process.env.DBURL;
-const PORT = 4500;
+const PORT = process.env.PORT || 4500;
 
 mongoose
   .connect(DBURL)

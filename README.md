@@ -17,6 +17,6 @@ A campground review site usuing the MERN stack. Users (AKA my friends) can share
 - unit testing
 - search/filter feature
 
-#Improvements
+# Improvements
 
 - actions & loaders possibly in their own file to more easily find in the future
